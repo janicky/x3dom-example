@@ -17,6 +17,10 @@
       <viewpoint position="-50 70.0 130.0" orientation="1 0.5 0 -0.7"></viewpoint>
       <PointLight id="pointLight" on="true" intensity="5" color="1 1 1" location="0 15 1.5" radius="50"></PointLight>
       <DirectionalLight id="directionalLight" direction="1 0 0" location="0 15 1.5" on="true" intensity="5.0" shadowIntensity="0.0"></DirectionalLight>
+      <SpotLight id="spotLight1" on="true" beamWidth="0.1" color="1 1 1" cutOffAngle="0.5" location="0 1 100" radius="100"></SpotLight>
+      <transform rotation="0 1 0 0.9">
+        <SpotLight id="spotLight2" on="true" beamWidth="0.1" color="0 1 1" cutOffAngle="0.5" location="-20 5 -20" radius="100"></SpotLight>
+      </transform>
       <!-- Ground shape -->
       <shape>
         <appearance>
@@ -87,6 +91,8 @@
     <div class="buttons">
       <button id="pointLightButton">Światło punktowe</button>
       <button id="directionalLightButton">Światło kierunkowe</button>
+      <button id="spotLight1Button">Światło reflektorowe 1</button>
+      <button id="spotLight2Button">Światło reflektorowe 2</button>
     </div>
   </x3d>
   <script src="scripts.js"></script>

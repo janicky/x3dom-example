@@ -32,6 +32,10 @@
   pointLightButton.addEventListener("click", togglePointLight);
   var directionalLightButton = document.getElementById("directionalLightButton");
   directionalLightButton.addEventListener("click", toggleDirectionalLight);
+  var spotLight1Button = document.getElementById("spotLight1Button");
+  spotLight1Button.addEventListener("click", toggleSpotLight1);
+  var spotLight2Button = document.getElementById("spotLight2Button");
+  spotLight2Button.addEventListener("click", toggleSpotLight2);
 
   function togglePointLight(e) {
     e.srcElement.classList.toggle("disabled");
@@ -44,5 +48,19 @@
     e.srcElement.classList.toggle("disabled");
     var enabled = directionalLight.getAttribute("on");
     directionalLight.setAttribute("on", (enabled === "true" ? "false" : "true"));
+  }
+
+  function toggleSpotLight1(e) {
+    var spotLight = document.getElementById("spotLight1");
+    e.srcElement.classList.toggle("disabled");
+    var enabled = spotLight.getAttribute("on");
+    spotLight.setAttribute("on", (enabled === "true" ? "false" : "true"));
+  }
+
+  function toggleSpotLight2(e) {
+    var spotLight = document.getElementById("spotLight2");
+    e.srcElement.classList.toggle("disabled");
+    var enabled = spotLight.getAttribute("on");
+    spotLight.setAttribute("on", (enabled === "true" ? "false" : "true"));
   }
 })();
