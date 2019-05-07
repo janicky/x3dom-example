@@ -12,18 +12,74 @@
 <body>
   <x3d width='1280px' height='720px'>
     <scene>
-      <navigationInfo type="none"></navigationInfo>
+      <!-- <navigationInfo type="none"></navigationInfo> -->
       <background skyColor="0.7 0.7 1"></background>
-      <viewpoint position="0.0 30.0 60.0" orientation="1 0 0 -0.5"></viewpoint>
-      <PointLight id='point' on='TRUE' intensity='0.9' color='1 0 0' location='0 1 0.5' radius='15.0000'></PointLight>
+      <viewpoint position="-30 50.0 90.0" orientation="1 0.5 0 -0.7"></viewpoint>
+      <!-- <PointLight id='point' on='TRUE' intensity='0.9' color='1 0 0' location='0 1 0.5' radius='15.0000'></PointLight> -->
       <!-- Ground shape -->
       <shape>
         <appearance>
           <material diffuseColor="0 1 0"></material>
           <!-- <ImageTexture url="./textures/grass.jpg" ></ImageTexture> -->
         </appearance>
-        <box size="50.0 1.2 50.0"></box>
+        <box size="100.0 1.2 100.0"></box>
       </shape>
+      <group>
+        <!-- Building -->
+        <transform translation="0 2.5 0">
+          <shape>
+            <appearance>
+              <material diffuseColor="0.5 0.5 0.5"></material>
+            </appearance>
+            <box size="10, 5, 5"></box>
+          </shape>
+          <transform translation="-7.5 0 1">
+            <shape>
+              <appearance>
+                <material diffuseColor="0.5 0.5 0.5"></material>
+              </appearance>
+              <box size="5, 5, 7"></box>
+            </shape>
+          </transform>
+          <!-- Roof -->
+          <transform rotation="1 0 0 0.75" translation="-2.5 2.6 0">
+            <shape>
+              <appearance>
+                <material diffuseColor="0.3 0.3 0.3"></material>
+              </appearance>
+              <box size="14.99, 4, 4"></box>
+            </shape>
+          </transform>
+          <transform rotation="1 0 0 0.6" translation="-7.5 2.6 1">
+            <shape>
+              <appearance>
+                <material diffuseColor="0.3 0.3 0.3"></material>
+              </appearance>
+              <box size="4.99, 4, 6"></box>
+            </shape>
+          </transform>
+          <!-- Garage -->
+          <transform translation="-7.5 -0.4 4.5">
+            <shape>
+              <appearance>
+                <material diffuseColor="0.1 0.1 0.1"></material>
+                <!-- <ImageTexture url="./textures/door.jpg"></ImageTexture> -->
+              </appearance>
+              <box size="4, 3.2, 0.1"></box>
+            </shape>
+          </transform>
+          <!-- Door -->
+          <transform translation="-0.5 -0.4 2.5">
+            <shape>
+              <appearance>
+                <material diffuseColor="0.1 0.1 0.1"></material>
+                <!-- <ImageTexture url="./textures/door.jpg"></ImageTexture> -->
+              </appearance>
+              <box size="1.9, 2.8, 0.1"></box>
+            </shape>
+          </transform>
+        </transform>
+      </group>
     </scene>
   </x3d>
 </body>
