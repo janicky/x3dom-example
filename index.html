@@ -16,6 +16,7 @@
       <background skyColor="0.7 0.7 1"></background>
       <viewpoint position="-50 70.0 130.0" orientation="1 0.5 0 -0.7"></viewpoint>
       <PointLight id="pointLight" on="true" intensity="5" color="1 1 1" location="0 15 1.5" radius="50"></PointLight>
+      <DirectionalLight id="directionalLight" direction="1 0 0" location="0 15 1.5" on="true" intensity="5.0" shadowIntensity="0.0"></DirectionalLight>
       <!-- Ground shape -->
       <shape>
         <appearance>
@@ -85,6 +86,7 @@
     </scene>
     <div class="buttons">
       <button id="pointLightButton">Światło punktowe</button>
+      <button id="directionalLightButton">Światło kierunkowe</button>
     </div>
   </x3d>
   <script src="scripts.js"></script>

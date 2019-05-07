@@ -30,10 +30,19 @@
 
   var pointLightButton = document.getElementById("pointLightButton");
   pointLightButton.addEventListener("click", togglePointLight);
+  var directionalLightButton = document.getElementById("directionalLightButton");
+  directionalLightButton.addEventListener("click", toggleDirectionalLight);
 
   function togglePointLight(e) {
     e.srcElement.classList.toggle("disabled");
     var enabled = pointLight.getAttribute("on");
     pointLight.setAttribute("on", (enabled === "true" ? "false" : "true"));
+  }
+
+  function toggleDirectionalLight(e) {
+    var directionalLight = document.getElementById("directionalLight");
+    e.srcElement.classList.toggle("disabled");
+    var enabled = directionalLight.getAttribute("on");
+    directionalLight.setAttribute("on", (enabled === "true" ? "false" : "true"));
   }
 })();
