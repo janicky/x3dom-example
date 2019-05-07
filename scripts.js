@@ -14,4 +14,17 @@
   }
 
   buildings.removeChild(building[0]);
+
+  var pointLight = document.getElementById("pointLight");
+  var pl = 0, r = 90;
+
+  setInterval(function() {
+    pl += 0.1;
+    var circleX = -10 + Math.cos(pl)*r;
+    var circleY = -10 + Math.sin(pl)*r;
+    pointLight.setAttribute("location", circleX + " 15 " + circleY);
+    if (pl > 360) {
+      pl = 0;
+    }
+  }, 100);
 })();
