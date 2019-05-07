@@ -63,4 +63,25 @@
     var enabled = spotLight.getAttribute("on");
     spotLight.setAttribute("on", (enabled === "true" ? "false" : "true"));
   }
+
+  document.addEventListener("keydown", move);
+  var viewpoint1 = document.getElementById("viewPoint1");
+  var vx = 0, vy = 20.0, vz = 130;
+
+  function move(e) {
+    console.log(e.keyCode);
+    var step = 1;
+    if (e.keyCode === 39) {
+      vx += step;
+    } else if (e.keyCode === 37) {
+      vx -= step;
+    }
+    if (e.keyCode === 40) {
+      vz += step;
+    } else if (e.keyCode === 38) {
+      vz -= step;
+    }
+    viewpoint1.setAttribute("position", vx + " " + vy + " " + vz);
+    viewpoint1.setAttribute("centerofrotation", vx + " " + vy + " " + vz);
+  }
 })();
