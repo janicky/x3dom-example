@@ -7,14 +7,15 @@
   <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
   <!-- Add X3DOM styles -->
   <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <x3d width='1280px' height='720px'>
+  <x3d width="1280px" height="720px" id="scene">
     <scene>
       <!-- <navigationInfo type="none"></navigationInfo> -->
       <background skyColor="0.7 0.7 1"></background>
       <viewpoint position="-50 70.0 130.0" orientation="1 0.5 0 -0.7"></viewpoint>
-      <PointLight id='pointLight' on='TRUE' intensity='10' color='1 1 1' location='0 15 1.5' radius='60'></PointLight>
+      <PointLight id="pointLight" on="true" intensity="5" color="1 1 1" location="0 15 1.5" radius="50"></PointLight>
       <!-- Ground shape -->
       <shape>
         <appearance>
@@ -82,6 +83,9 @@
         </group>
       </group>
     </scene>
+    <div class="buttons">
+      <button id="pointLightButton">Światło punktowe</button>
+    </div>
   </x3d>
   <script src="scripts.js"></script>
 </body>

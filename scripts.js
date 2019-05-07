@@ -19,12 +19,21 @@
   var pl = 0, r = 90;
 
   setInterval(function() {
-    pl += 0.1;
+    pl += 0.05;
     var circleX = -10 + Math.cos(pl)*r;
     var circleY = -10 + Math.sin(pl)*r;
     pointLight.setAttribute("location", circleX + " 15 " + circleY);
     if (pl > 360) {
       pl = 0;
     }
-  }, 100);
+  }, 50);
+
+  var pointLightButton = document.getElementById("pointLightButton");
+  pointLightButton.addEventListener("click", togglePointLight);
+
+  function togglePointLight(e) {
+    e.srcElement.classList.toggle("disabled");
+    var enabled = pointLight.getAttribute("on");
+    pointLight.setAttribute("on", (enabled === "true" ? "false" : "true"));
+  }
 })();
