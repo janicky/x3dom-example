@@ -6,15 +6,14 @@
   <!-- Add X3DOM library -->
   <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
   <!-- Add X3DOM styles -->
-  <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'>
-  </link>
+  <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link>
 </head>
 <body>
   <x3d width='1280px' height='720px'>
     <scene>
       <!-- <navigationInfo type="none"></navigationInfo> -->
       <background skyColor="0.7 0.7 1"></background>
-      <viewpoint position="-30 50.0 90.0" orientation="1 0.5 0 -0.7"></viewpoint>
+      <viewpoint position="-50 70.0 130.0" orientation="1 0.5 0 -0.7"></viewpoint>
       <!-- <PointLight id='point' on='TRUE' intensity='0.9' color='1 0 0' location='0 1 0.5' radius='15.0000'></PointLight> -->
       <!-- Ground shape -->
       <shape>
@@ -22,65 +21,68 @@
           <material diffuseColor="0 1 0"></material>
           <!-- <ImageTexture url="./textures/grass.jpg" ></ImageTexture> -->
         </appearance>
-        <box size="100.0 1.2 100.0"></box>
+        <box size="170.0 1.2 170.0"></box>
       </shape>
-      <group>
-        <!-- Building -->
-        <transform translation="0 2.5 0">
-          <shape>
-            <appearance>
-              <material diffuseColor="0.5 0.5 0.5"></material>
-            </appearance>
-            <box size="10, 5, 5"></box>
-          </shape>
-          <transform translation="-7.5 0 1">
+      <group id="buildings">
+        <group class="building">
+          <!-- Building -->
+          <transform translation="0 2.5 0">
             <shape>
               <appearance>
                 <material diffuseColor="0.5 0.5 0.5"></material>
               </appearance>
-              <box size="5, 5, 7"></box>
+              <box size="10, 5, 5"></box>
             </shape>
+            <transform translation="-7.5 0 1">
+              <shape>
+                <appearance>
+                  <material diffuseColor="0.5 0.5 0.5"></material>
+                </appearance>
+                <box size="5, 5, 7"></box>
+              </shape>
+            </transform>
+            <!-- Roof -->
+            <transform rotation="1 0 0 0.75" translation="-2.5 2.6 0">
+              <shape>
+                <appearance>
+                  <material diffuseColor="0.3 0.3 0.3"></material>
+                </appearance>
+                <box size="14.99, 4, 4"></box>
+              </shape>
+            </transform>
+            <transform rotation="1 0 0 0.6" translation="-7.5 2.6 1">
+              <shape>
+                <appearance>
+                  <material diffuseColor="0.3 0.3 0.3"></material>
+                </appearance>
+                <box size="4.99, 4, 6"></box>
+              </shape>
+            </transform>
+            <!-- Garage -->
+            <transform translation="-7.5 -0.4 4.5">
+              <shape>
+                <appearance>
+                  <material diffuseColor="0.1 0.1 0.1"></material>
+                  <!-- <ImageTexture url="./textures/door.jpg"></ImageTexture> -->
+                </appearance>
+                <box size="4, 3.2, 0.1"></box>
+              </shape>
+            </transform>
+            <!-- Door -->
+            <transform translation="-0.5 -0.4 2.5">
+              <shape>
+                <appearance>
+                  <material diffuseColor="0.1 0.1 0.1"></material>
+                  <!-- <ImageTexture url="./textures/door.jpg"></ImageTexture> -->
+                </appearance>
+                <box size="1.9, 2.8, 0.1"></box>
+              </shape>
+            </transform>
           </transform>
-          <!-- Roof -->
-          <transform rotation="1 0 0 0.75" translation="-2.5 2.6 0">
-            <shape>
-              <appearance>
-                <material diffuseColor="0.3 0.3 0.3"></material>
-              </appearance>
-              <box size="14.99, 4, 4"></box>
-            </shape>
-          </transform>
-          <transform rotation="1 0 0 0.6" translation="-7.5 2.6 1">
-            <shape>
-              <appearance>
-                <material diffuseColor="0.3 0.3 0.3"></material>
-              </appearance>
-              <box size="4.99, 4, 6"></box>
-            </shape>
-          </transform>
-          <!-- Garage -->
-          <transform translation="-7.5 -0.4 4.5">
-            <shape>
-              <appearance>
-                <material diffuseColor="0.1 0.1 0.1"></material>
-                <!-- <ImageTexture url="./textures/door.jpg"></ImageTexture> -->
-              </appearance>
-              <box size="4, 3.2, 0.1"></box>
-            </shape>
-          </transform>
-          <!-- Door -->
-          <transform translation="-0.5 -0.4 2.5">
-            <shape>
-              <appearance>
-                <material diffuseColor="0.1 0.1 0.1"></material>
-                <!-- <ImageTexture url="./textures/door.jpg"></ImageTexture> -->
-              </appearance>
-              <box size="1.9, 2.8, 0.1"></box>
-            </shape>
-          </transform>
-        </transform>
+        </group>
       </group>
     </scene>
   </x3d>
+  <script src="scripts.js"></script>
 </body>
 </html>
