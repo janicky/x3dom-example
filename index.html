@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>X3DOM Scene</title>
+  <!-- Add X3DOM library -->
+  <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
+  <!-- Add X3DOM styles -->
+  <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'>
+  </link>
+</head>
+<body>
+  <x3d width='1280px' height='720px'>
+    <scene>
+      <navigationInfo type="none"></navigationInfo>
+      <background skyColor="0.7 0.7 1"></background>
+      <viewpoint position="0.0 30.0 60.0" orientation="1 0 0 -0.5"></viewpoint>
+      <PointLight id='point' on='TRUE' intensity='0.9' color='1 0 0' location='0 1 0.5' radius='15.0000'></PointLight>
+      <!-- Ground shape -->
+      <shape>
+        <appearance>
+          <material diffuseColor="0 1 0"></material>
+          <!-- <ImageTexture url="./textures/grass.jpg" ></ImageTexture> -->
+        </appearance>
+        <box size="50.0 1.2 50.0"></box>
+      </shape>
+    </scene>
+  </x3d>
+</body>
+</html>
