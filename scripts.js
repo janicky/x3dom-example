@@ -118,4 +118,11 @@
     var ssao = env.getAttribute("SSAO");
     env.setAttribute("SSAO", (ssao === "true" ? "false" : "true"));
   });
+
+  var gamma = 1;
+  var toggleGammaButton = document.getElementById("toggleGamma");
+  toggleGammaButton.addEventListener("click", function() {
+    gamma = (gamma === 0 ? 1 : 0);
+    env.setAttribute("gammaCorrectionDefault", (gamma === 0 ? "none" : "linear"));
+  });
 })();
