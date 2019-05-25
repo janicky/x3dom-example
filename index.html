@@ -14,6 +14,8 @@
     <scene>
       <navigationInfo type="play"></navigationInfo>
       <background skyColor="0.7 0.7 1"></background>
+      <Environment id='env' SSAO='true' SSAOamount='0.5' SSAOblurDepthTreshold='1.0' SSAOradius='0.5'
+        SSAOrandomTextureSize='4'></Environment>
       <viewpoint id="viewPoint1" position="0 20.0 130.0"></viewpoint>
       <PointLight id="pointLight" on="true" intensity="5" color="1 1 1" location="0 15 1.5" radius="50"></PointLight>
       <DirectionalLight 
@@ -110,6 +112,7 @@
       <button id="spotLight2Button">Światło reflektorowe 2</button>
       <button id="changeShapeButton">Zmień kształt</button>
       <button id="toggleShadows">Przełącz cienie</button>
+      <button id="toggleSSAO">Przełącz SSAO</button>
     </div>
   </x3d>
   <script src="scripts.js"></script>

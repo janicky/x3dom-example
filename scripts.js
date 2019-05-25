@@ -111,4 +111,11 @@
     shadows = (shadows == 0 ? 0.5 : 0);
     directionalLight.setAttribute("shadowIntensity", shadows);
   });
+
+  var toggleSSAOButton = document.getElementById("toggleSSAO");
+  var env = document.getElementById("env");
+  toggleSSAOButton.addEventListener("click", function() {
+    var ssao = env.getAttribute("SSAO");
+    env.setAttribute("SSAO", (ssao === "true" ? "false" : "true"));
+  });
 })();
