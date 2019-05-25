@@ -25,7 +25,7 @@
       <shape>
         <appearance>
           <material diffuseColor="0 1 0"></material>
-          <ImageTexture url="./textures/grass.jpg" ></ImageTexture>
+          <!-- <ImageTexture url="./textures/grass.jpg" ></ImageTexture> -->
         </appearance>
         <box size="170.0 1.2 170.0"></box>
       </shape>
@@ -33,18 +33,27 @@
         <group class="building">
           <!-- Building -->
           <transform translation="0 2.5 0">
-            <shape>
-              <appearance>
-                <material diffuseColor="0.5 0.5 0.5"></material>
-                <ImageTexture url="./textures/brick.jpg"></ImageTexture>
-              </appearance>
-              <box size="10, 5, 5"></box>
-            </shape>
+            <switch whichChoice="0" class="changeElement">
+              <shape>
+                <appearance>
+                  <material diffuseColor="0.5 0.5 0.5"></material>
+                  <!-- <ImageTexture url="./textures/brick.jpg"></ImageTexture> -->
+                </appearance>
+                <box size="10, 5, 5"></box>
+              </shape>
+              <shape>
+                <appearance>
+                  <material diffuseColor="0.5 0.5 0.5"></material>
+                  <!-- <ImageTexture url="./textures/brick.jpg"></ImageTexture> -->
+                </appearance>
+                <sphere radius="6"></sphere>
+              </shape>
+            </switch>
             <transform translation="-7.5 0 1">
               <shape>
                 <appearance>
                   <material diffuseColor="0.5 0.5 0.5"></material>
-                  <ImageTexture url="./textures/brick.jpg"></ImageTexture>
+                  <!-- <ImageTexture url="./textures/brick.jpg"></ImageTexture> -->
                 </appearance>
                 <box size="5, 5, 7"></box>
               </shape>
@@ -54,7 +63,7 @@
               <shape>
                 <appearance>
                   <material diffuseColor="0.3 0.3 0.3"></material>
-                  <ImageTexture url="./textures/roof.jpg"></ImageTexture>
+                  <!-- <ImageTexture url="./textures/roof.jpg"></ImageTexture> -->
                 </appearance>
                 <box size="14.99, 4, 4"></box>
               </shape>
@@ -63,7 +72,7 @@
               <shape>
                 <appearance>
                   <material diffuseColor="0.3 0.3 0.3"></material>
-                  <ImageTexture url="./textures/roof.jpg"></ImageTexture>
+                  <!-- <ImageTexture url="./textures/roof.jpg"></ImageTexture> -->
                 </appearance>
                 <box size="4.99, 4, 6"></box>
               </shape>
@@ -83,7 +92,7 @@
               <shape>
                 <appearance>
                   <material diffuseColor="0.1 0.1 0.1"></material>
-                  <ImageTexture url="./textures/door.jpg"></ImageTexture>
+                  <!-- <ImageTexture url="./textures/door.jpg"></ImageTexture> -->
                 </appearance>
                 <box size="1.9, 2.8, 0.1"></box>
               </shape>
@@ -97,6 +106,7 @@
       <button id="directionalLightButton">Światło kierunkowe</button>
       <button id="spotLight1Button">Światło reflektorowe 1</button>
       <button id="spotLight2Button">Światło reflektorowe 2</button>
+      <button id="changeShapeButton">Zmień kształt</button>
     </div>
   </x3d>
   <script src="scripts.js"></script>

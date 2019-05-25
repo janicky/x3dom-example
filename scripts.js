@@ -84,4 +84,21 @@
     viewpoint1.setAttribute("position", vx + " " + vy + " " + vz);
     viewpoint1.setAttribute("centerofrotation", vx + " " + vy + " " + vz);
   }
+
+  var choice = 0;
+
+  var changeShapeButton = document.getElementById("changeShapeButton");
+  changeShapeButton.addEventListener("click", function() {
+    choice = (choice === 0 ? 1 : 0);
+    let classes = document.getElementsByClassName("changeElement");
+    for (var i = 0; i < classes.length; i++) {
+      setTimeout((element, choice) => 
+        changeShape(element, choice)
+      , i * 50, classes[i], choice);
+    }
+  });
+
+  function changeShape(element, choice) {
+    element.setAttribute("whichChoice", choice);
+  }
 })();
