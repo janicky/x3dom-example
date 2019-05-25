@@ -19,7 +19,9 @@
   var pl = 0, r = 90;
 
   setInterval(function() {
-    pl += 0.05;
+    if (pointLight.getAttribute("on") === "true") {
+      pl += 0.05;
+    }
     var circleX = -10 + Math.cos(pl)*r;
     var circleY = -10 + Math.sin(pl)*r;
     pointLight.setAttribute("location", circleX + " 15 " + circleY);
@@ -101,4 +103,12 @@
   function changeShape(element, choice) {
     element.setAttribute("whichChoice", choice);
   }
+
+  var toggleShadowsButton = document.getElementById("toggleShadows");
+  var shadows = 0.5;
+  toggleShadowsButton.addEventListener("click", function() {
+    var directionalLight = document.getElementById("directionalLight");
+    shadows = (shadows == 0 ? 0.5 : 0);
+    directionalLight.setAttribute("shadowIntensity", shadows);
+  });
 })();
